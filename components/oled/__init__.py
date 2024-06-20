@@ -19,5 +19,9 @@ CONFIG_SCHEMA = cv.Schema({
 }).extend(cv.COMPONENT_SCHEMA)
 
 def to_code(config):
+    cg.add_build_flag("-DU8X8_NO_HW_SPI")
+    cg.add_build_flag("-DU8X8_NO_HW_I2C")
+    cg.add_library("olikraus/U8g2", None)
+    
     var = cg.new_Pvariable(config[CONF_ID])
     yield cg.register_component(var, config)
