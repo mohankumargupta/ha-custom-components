@@ -11,11 +11,11 @@ wifi:
 web_server:
 logger:
 oled:
-  - sda: 5
-    scl: 6
+  - sda: 10
+    scl: 9
     id: oled_1
-  - sda: 7
-    scl: 8
-    address: 0x4B
-    id: oled_2
+  #- sda: 7
+  #  scl: 8
+  #  address: 0x4B
+  #  id: oled_2
 
