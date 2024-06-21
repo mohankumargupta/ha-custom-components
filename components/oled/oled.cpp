@@ -22,8 +22,47 @@ void Oled::setup() {
       do {
      
     u8g2oled.setFont(u8g2_font_unifont_t_72_73);
-    int icon_width = u8g2oled.getUTF8Width("①");
-    u8g2oled.drawUTF8(64 - icon_width/2, 32, "①");
+    int icon_width;
+
+    switch (this->index)
+    {
+    case 1:
+      icon_width = u8g2oled.getUTF8Width("①");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "①");
+      break;
+    case 2:
+      icon_width = u8g2oled.getUTF8Width("②");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "②");      
+      break;
+    case 3:
+      icon_width = u8g2oled.getUTF8Width("③");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "③");     
+      break;
+    case 4:
+      icon_width = u8g2oled.getUTF8Width("④");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "④");     
+      break;
+    case 5:
+      icon_width = u8g2oled.getUTF8Width("⑤");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "⑤");     
+      break;
+    case 6:
+      icon_width = u8g2oled.getUTF8Width("⑥");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "⑥");     
+      break;
+    case 7:
+      icon_width = u8g2oled.getUTF8Width("⑦");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "⑦");     
+      break;
+    case 8:
+      icon_width = u8g2oled.getUTF8Width("⑧");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "⑧");     
+      break;
+    case 9:
+      icon_width = u8g2oled.getUTF8Width("⑨");
+      u8g2oled.drawUTF8(64 - icon_width/2, 32, "⑨");     
+      break;
+    }
     //u8g2oled.drawUTF8(100, 12, "∞");
     //u8g2oled.setFont(u8g2_font_t0_11_tf);
     //u8g2oled.drawStr(0,12,"Hello World!");
@@ -58,6 +97,10 @@ void Oled::set_pins(uint8_t _sda_pin, uint8_t _scl_pin) {
     this->scl_pin = _scl_pin;
 }
 
+void Oled::set_index(uint8_t index) {
+    this->index = index;
+}
+
 // void Oled::printSomething() {
 
 // }
@@ -65,3 +108,4 @@ void Oled::set_pins(uint8_t _sda_pin, uint8_t _scl_pin) {
 
 }  // namespace oled
 }  // namespace esphome
+

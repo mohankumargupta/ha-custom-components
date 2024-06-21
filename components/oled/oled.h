@@ -16,10 +16,12 @@ class Oled : public Component {
   
   //void printSomething();
   void set_pins(uint8_t sda_pin, uint8_t scl_pin);
+  void set_index(uint8_t index);
 
   private:
     uint8_t sda_pin;
     uint8_t scl_pin;
+    uint8_t index;
     U8G2_SSD1306_128X64_NONAME_1_SW_I2C* u8g2device = nullptr;
     //U8G2_SSD1306_128X64_NONAME_F_SW_I2C* u8g2device = nullptr;
 };
