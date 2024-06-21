@@ -20,20 +20,26 @@ void Oled::setup() {
     this->u8g2device->begin();
     u8g2oled.firstPage();
       do {
-    u8g2oled.setFont(u8g2_font_t0_11_tf);
-    u8g2oled.drawStr(0,12,"Hello World!");
+     
+    u8g2oled.setFont(u8g2_font_unifont_t_72_73);
+    int icon_width = u8g2oled.getUTF8Width("①");
+    u8g2oled.drawUTF8(64 - icon_width/2, 32, "①");
+    //u8g2oled.drawUTF8(100, 12, "∞");
+    //u8g2oled.setFont(u8g2_font_t0_11_tf);
+    //u8g2oled.drawStr(0,12,"Hello World!");
     
-    u8g2oled.setFont(u8g2_font_t0_11b_tf);
-    u8g2oled.drawStr(0,24,"Hello World!");
+    //u8g2oled.setFont(u8g2_font_t0_11b_tf);
+    //u8g2oled.drawStr(0,24,"Hello World!");
     
-    u8g2oled.setFont(u8g2_font_NokiaSmallPlain_tf);
-    u8g2oled.drawStr(0,37,"Hello World!");
+    //u8g2oled.setFont(u8g2_font_NokiaSmallPlain_tf);
+    //u8g2oled.drawStr(0,37,"Hello World!");
     
-    u8g2oled.setFont(u8g2_font_NokiaSmallBold_tf);
-    u8g2oled.drawStr(0,50,"Hello World!");
+    //u8g2oled.setFont(u8g2_font_NokiaSmallBold_tf);
+    //u8g2oled.drawStr(0,50,"Hello World!");
 
     u8g2oled.setFont(u8g2_font_lucasfont_alternate_tf);
-    u8g2oled.drawStr(0,64,"Hello World!");
+    int text_width = u8g2oled.getUTF8Width("Hello World!");
+    u8g2oled.drawStr(64 - text_width/2,48,"Hello World!");
 
   } while ( u8g2oled.nextPage() );
   
