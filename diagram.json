@@ -100,7 +100,22 @@
     [ "oled4:SCL", "bb1:28t.c", "", [ "$bb" ] ],
     [ "oled4:SDA", "bb1:29t.c", "", [ "$bb" ] ],
     [ "oled4:SCL", "esp:15", "yellow", [ "v-38.4", "h230.7", "v67.2" ] ],
-    [ "oled4:SDA", "esp:16", "green", [ "v-28.8", "h211.27", "v57.6" ] ]
+    [ "oled4:SDA", "esp:16", "green", [ "v-28.8", "h211.27", "v57.6" ] ],
+    [ "oled5:GND", "bb1:bn.3", "black", [ "v0" ] ],
+    [ "oled5:VCC", "bb1:bp.4", "red", [ "v0" ] ],
+    [ "oled6:GND", "bb1:bn.12", "black", [ "v0" ] ],
+    [ "oled6:VCC", "bb1:bp.13", "red", [ "v0" ] ],
+    [ "oled7:GND", "bb1:bn.21", "black", [ "v0" ] ],
+    [ "oled7:VCC", "bb1:bp.22", "red", [ "v0" ] ],
+    [ "oled5:SCL", "esp:17", "yellow", [ "v-76.8", "h432.3", "v-28.8" ] ],
+    [ "oled5:SDA", "esp:18", "green", [ "v-67.2", "h432.07", "v-28.8" ] ],
+    [ "oled6:SCL", "esp:8", "yellow", [ "v-48", "h115.5", "v-9.6", "h230.4", "v-28.8" ] ],
+    [
+      "oled6:SDA",
+      "esp:46",
+      "green",
+      [ "v-9.6", "h38.47", "v86.4", "h124.8", "v-124.8", "h182.4", "v-19.2" ]
+    ]
   ],
   "dependencies": {}
 }
