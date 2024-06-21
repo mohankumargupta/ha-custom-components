@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "author": "Raspberry Pi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 83.4, "left": -304.4, "attrs": {} },
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 86.22, "left": 254.17, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 147.14,
+      "left": -182.17,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled3",
+      "top": 147.14,
+      "left": -287.77,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled4",
+      "top": 147.14,
+      "left": -76.57,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled5",
+      "top": 300.74,
+      "left": -287.77,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled6",
+      "top": 300.74,
+      "left": -182.17,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled7",
+      "top": 300.74,
+      "left": -76.57,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled8",
+      "top": 415.94,
+      "left": -287.77,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled9",
+      "top": 415.94,
+      "left": -182.17,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled2",
+      "top": 415.94,
+      "left": -76.57,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": 190, "left": -560.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "bb1:bp.25", "bb1:tp.25", "red", [ "v-10.5", "h40", "v-153.6" ] ],
+    [ "bb1:tp.24", "esp:3V3.1", "red", [ "v-9.3", "h270.4" ] ],
+    [ "esp:GND.4", "bb1:tn.23", "black", [ "h220.8", "v0", "h268.8", "v-249.6", "h-662.4" ] ],
+    [ "bb1:bn.25", "esp:GND.1", "black", [ "v-1.3", "h40", "v38.4" ] ],
+    [ "oled3:SCL", "esp:4", "yellow", [ "v-144", "h480.3", "v134.4" ] ],
+    [ "oled3:SDA", "esp:5", "green", [ "v-134.4", "h460.87", "v134.4" ] ],
+    [ "oled3:GND", "bb1:tn.3", "black", [ "v0" ] ],
+    [ "oled3:VCC", "bb1:tp.4", "red", [ "v-57.6", "h0.15" ] ],
+    [ "oled1:GND", "bb1:tn.12", "black", [ "v0" ] ],
+    [ "oled1:VCC", "bb1:tp.13", "red", [ "v0" ] ],
+    [ "oled4:GND", "bb1:tn.21", "black", [ "v0" ] ],
+    [ "oled4:VCC", "bb1:tp.22", "red", [ "v0" ] ],
+    [ "oled1:SCL", "esp:6", "yellow", [ "v-124.8", "h355.5", "v134.4" ] ],
+    [ "oled1:SDA", "esp:7", "green", [ "v-115.2", "h336.07", "v19.2" ] ],
+    [ "oled1:GND", "bb1:15t.c", "", [ "$bb" ] ],
+    [ "oled1:VCC", "bb1:16t.c", "", [ "$bb" ] ],
+    [ "oled1:SCL", "bb1:17t.c", "", [ "$bb" ] ],
+    [ "oled1:SDA", "bb1:18t.c", "", [ "$bb" ] ],
+    [ "oled3:GND", "bb1:4t.c", "", [ "$bb" ] ],
+    [ "oled3:VCC", "bb1:5t.c", "", [ "$bb" ] ],
+    [ "oled3:SCL", "bb1:6t.c", "", [ "$bb" ] ],
+    [ "oled3:SDA", "bb1:7t.c", "", [ "$bb" ] ],
+    [ "oled4:GND", "bb1:26t.c", "", [ "$bb" ] ],
+    [ "oled4:VCC", "bb1:27t.c", "", [ "$bb" ] ],
+    [ "oled4:SCL", "bb1:28t.c", "", [ "$bb" ] ],
+    [ "oled4:SDA", "bb1:29t.c", "", [ "$bb" ] ],
+    [ "oled4:SCL", "esp:15", "yellow", [ "v-38.4", "h230.7", "v67.2" ] ],
+    [ "oled4:SDA", "esp:16", "green", [ "v-28.8", "h211.27", "v57.6" ] ]
+  ],
+  "dependencies": {}
+}
