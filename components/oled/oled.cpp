@@ -6,24 +6,6 @@ namespace oled {
 static const char *TAG = "oled.component";
 
 void Oled::setup() {
-
-
-}
-
-void Oled::loop() {
-
-}
-
-void Oled::dump_config(){
-    ESP_LOGI(TAG, "Empty component");
-}
-
-void Oled::set_pins(uint8_t _sda_pin, uint8_t _scl_pin) {
-    this->sda_pin = _sda_pin;
-    this->scl_pin = _scl_pin;
-}
-
-void Oled::printSomething() {
     //U8G2_SSD1306_128X64_NONAME_1_SW_I2C u8g2moo (U8G2_R0, 9, 8, U8X8_PIN_NONE);
     U8G2_SSD1306_128X64_NONAME_1_SW_I2C u8g2moo (U8G2_R0, this->scl_pin, this->sda_pin, U8X8_PIN_NONE);
     
@@ -47,6 +29,23 @@ void Oled::printSomething() {
 
   } while ( u8g2moo.nextPage() );
 }
+
+void Oled::loop() {
+
+}
+
+void Oled::dump_config(){
+    ESP_LOGI(TAG, "Setting up OLED Component");
+}
+
+void Oled::set_pins(uint8_t _sda_pin, uint8_t _scl_pin) {
+    this->sda_pin = _sda_pin;
+    this->scl_pin = _scl_pin;
+}
+
+// void Oled::printSomething() {
+
+// }
 
 
 }  // namespace oled
