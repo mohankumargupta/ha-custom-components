@@ -7,27 +7,36 @@ static const char *TAG = "oled.component";
 
 void Oled::setup() {
     //U8G2_SSD1306_128X64_NONAME_1_SW_I2C u8g2moo (U8G2_R0, 9, 8, U8X8_PIN_NONE);
-    U8G2_SSD1306_128X64_NONAME_1_SW_I2C u8g2moo (U8G2_R0, this->scl_pin, this->sda_pin, U8X8_PIN_NONE);
+    U8G2_SSD1306_128X64_NONAME_1_SW_I2C u8g2oled (U8G2_R0, this->scl_pin, this->sda_pin, U8X8_PIN_NONE);
+    //U8G2_SSD1306_128X64_NONAME_F_SW_I2C u8g2oled (U8G2_R0, this->scl_pin, this->sda_pin, U8X8_PIN_NONE);
     
-    u8g2moo.begin();
-    u8g2moo.firstPage();
+    //this->u8g2device = &u8g2oled;
+    //u8g2oled.clearBuffer();         
+    //u8g2oled.setFont(u8g2_font_t0_11_tf); 
+    //u8g2oled.drawStr(0, 12, "Hello World!"); 
+    //u8g2oled.sendBuffer();          
+
+    this->u8g2device = &u8g2oled;
+    this->u8g2device->begin();
+    u8g2oled.firstPage();
       do {
-    u8g2moo.setFont(u8g2_font_t0_11_tf);
-    u8g2moo.drawStr(0,12,"Hello World!");
+    u8g2oled.setFont(u8g2_font_t0_11_tf);
+    u8g2oled.drawStr(0,12,"Hello World!");
     
-    u8g2moo.setFont(u8g2_font_t0_11b_tf);
-    u8g2moo.drawStr(0,24,"Hello World!");
+    u8g2oled.setFont(u8g2_font_t0_11b_tf);
+    u8g2oled.drawStr(0,24,"Hello World!");
     
-    u8g2moo.setFont(u8g2_font_NokiaSmallPlain_tf);
-    u8g2moo.drawStr(0,37,"Hello World!");
+    u8g2oled.setFont(u8g2_font_NokiaSmallPlain_tf);
+    u8g2oled.drawStr(0,37,"Hello World!");
     
-    u8g2moo.setFont(u8g2_font_NokiaSmallBold_tf);
-    u8g2moo.drawStr(0,50,"Hello World!");
+    u8g2oled.setFont(u8g2_font_NokiaSmallBold_tf);
+    u8g2oled.drawStr(0,50,"Hello World!");
 
-    u8g2moo.setFont(u8g2_font_lucasfont_alternate_tf);
-    u8g2moo.drawStr(0,64,"Hello World!");
+    u8g2oled.setFont(u8g2_font_lucasfont_alternate_tf);
+    u8g2oled.drawStr(0,64,"Hello World!");
 
-  } while ( u8g2moo.nextPage() );
+  } while ( u8g2oled.nextPage() );
+  
 }
 
 void Oled::loop() {
